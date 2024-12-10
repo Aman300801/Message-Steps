@@ -34,14 +34,16 @@ function App() {
         <div className="buttons">
           <button
             style={{ backgroundColor: "#7950f2", color: "#fff" }}
-            onClick={() => setStep(step > 1 ? step - 1 : step)}
+            onClick={() => setStep((step) => (step > 1 ? step - 1 : step))}
             disabled={step <= 1}
           >
+            {/* this is wrong way to update state based on previous value */}
+            {/* onClick={() => setStep(step > 1 ? step - 1 : step)} */}
             Previous
           </button>
           <button
             style={{ backgroundColor: "#7950f2", color: "#fff" }}
-            onClick={() => setStep(step < 3 ? step + 1 : step)}
+            onClick={() => setStep((step) => (step < 3 ? step + 1 : step))}
             disabled={step >= 3}
           >
             Next
